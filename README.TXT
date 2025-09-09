@@ -31,3 +31,13 @@ digit = new NumberDisplay(10);
 25.
 Rectangle window;
 window = new Rectangle(10, 20);
+26. public ClockDisplay(int hour, int minute) Constructor for ClockDisplay objects. This constructor creates a new clock set at the time specified by the parameters
+27.because for one constructor your setting the time predeterminely and the other is set automaticly at zero.
+28. p1.print("report.docx", true);
+int status2 = p1.getStatus(5000);
+29. Circle, Square, Triangle
+30. roof.changeSize(60, 180);
+            roof.moveHorizontal(20);
+            roof.moveVertical(-60);
+            roof.makeVisible();
+31. Maybe the boolean method for draw is internal the rest was externally called private boolean drawn;
