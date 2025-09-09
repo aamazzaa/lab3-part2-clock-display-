@@ -23,3 +23,11 @@ Everything else could be pretty much the same.
 
 
 Note: This project does not implement adequate handling of errors.
+
+21. Since this object starts at "00:00" we can understand that its a 24 hour clock that has a rollback of 60 in the minutes and 24 in the hours that uses the ClockTick method as its increment method.
+23. 60 times or you can use the setTime method
+24. NumberDisplay digit;
+digit = new NumberDisplay(10);
+25.
+Rectangle window;
+window = new Rectangle(10, 20);
