@@ -1,26 +1,13 @@
-
-/**
- * The ClockDisplay class implements a digital clock display for a
- * European-style 24 hour clock. The clock shows hours and minutes. The 
- * range of the clock is 00:00 (midnight) to 23:59 (one minute before 
- * midnight).
- * 
- * The clock display receives "ticks" (via the timeTick method) every minute
- * and reacts by incrementing the display. This is done in the usual clock
- * fashion: the hour increments when the minutes roll over to zero.
- * 
- * @author Michael Kölling and David J. Barnes
- * @version 7.0
- */
 public class ClockDisplay
 {
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
-    
+    private String meridian;         // AM or PM
+
     /**
      * Constructor for ClockDisplay objects. This constructor 
-     * creates a new clock set at 00:00.
+     * creates a new clock set at 12:00 AM.
      */
     public ClockDisplay()
     {
@@ -49,7 +36,6 @@ public class ClockDisplay
     {
         minutes.increment();
         if(minutes.getValue() == 0) {
-            // It just rolled over!
             hours.increment();
         }
         updateDisplay();
@@ -66,19 +52,36 @@ public class ClockDisplay
     }
 
     /**
-     * Return the current time of this display in the format HH:MM.
+     * Return the current time of this display in the format HH:MM AM/PM.
      */
     public String getTime()
     {
         return displayString;
     }
-    
+
     /**
      * Update the internal string that represents the display.
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue();
+        int hourValue = hours.getValue();
+        int displayHour;
+
+        if (hourValue == 0) {
+            displayHour = 12;
+            meridian = "AM";
+        } else if (hourValue < 12) {
+            displayHour = hourValue;
+            meridian = "AM";
+        } else if (hourValue == 12) {
+            displayHour = 12;
+            meridian = "PM";
+        } else {
+            displayHour = hourValue - 12;
+            meridian = "PM";
+        }
+
+        String hourString = (displayHour < 10) ? "0" + displayHour : "" + displayHour;
+        displayString = hourString + ":" + minutes.getDisplayValue() + " " + meridian;
     }
 }

@@ -40,4 +40,9 @@ int status2 = p1.getStatus(5000);
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
             roof.makeVisible();
-31. Maybe the boolean method for draw is internal the rest was externally called private boolean drawn;
+31 Maybe the boolean method for draw is internal the rest was externally called private boolean drawn;
+32 2.666
+ 33. 2   (int)
+34. N has to be a variable that is divisble by 5 without any decimals since its calculating it through int and not double or float.
+35. n % m both have to be divisble by each other without any decimals and cant be negative since the integer value cannot calculate decimals and negative numbers maybe double or float.
+36. 

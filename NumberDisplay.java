@@ -10,7 +10,7 @@
  * @author Michael Kölling and David J. Barnes
  * @version 7.0
  */
-public class NumberDisplay
+public class NumberDisplay 
 {
     private int limit;
     private int value;
